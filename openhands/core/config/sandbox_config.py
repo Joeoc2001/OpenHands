@@ -72,6 +72,9 @@ class SandboxConfig(BaseModel):
     close_delay: int = Field(default=15)
     remote_runtime_resource_factor: int = Field(default=1)
     enable_gpu: bool = Field(default=False)
+    network: str | None = Field(
+        default=None, description='The Docker network to use for the sandbox container.'
+    )
     docker_runtime_kwargs: dict | None = Field(default=None)
     selected_repo: str | None = Field(default=None)
 
